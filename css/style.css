@@ -1,0 +1,304 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #F5F9E9, #C2C1A5);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita desplazamiento lateral */
+}
+
+header {
+    background-color: #515751;
+    color: white;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    max-width: 900px; /* Ancho máximo para centrar mejor el contenido */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Reduce el espacio entre los elementos */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    max-width: 50%; /* Limita el ancho para mejor alineación */
+    box-sizing: border-box;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 200px;
+    max-width: 40%; /* Reduce el ancho máximo */
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-sizing: border-box;
+    margin-left: 1rem; /* Añade un pequeño margen izquierdo */
+}
+
+.contact-info h2 {
+    color: white;
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    margin: 0.5rem 0;
+    word-break: break-word;
+}
+
+h1 {
+    margin: 0.5rem 0;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+h2 {
+    color: #1e2a38;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+.section {
+    margin: 1.5rem auto; /* Restaura el margen original */
+    max-width: calc(100% - 15rem); /* Restaura el espacio lateral de 1rem a cada lado */
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+ul, ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 0.5rem 0;
+}
+
+li ul, li ol {
+    padding-left: 1rem;
+    list-style-type: none;
+}
+
+li li {
+    list-style-type: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #515751;
+    color: white;
+    margin-top: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffb703;
+    color: #1e2a38;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #f77f00;
+    transform: scale(1.05);
+}
+
+.foto-perfil {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.05);
+}
+
+.logos-contenedor {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 80px;
+    padding-bottom: 80px;
+}
+
+.logos {
+    position: relative;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.logos img {
+    height: 65px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: white;
+    padding: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logos img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+.contact-info a:hover {
+    opacity: 0.8;
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem; /* Reduce aún más el espacio entre elementos */
+    }
+
+    .profile-info, .contact-info {
+        width: 90%;
+        max-width: 400px;
+        min-width: unset;
+        margin: 0; /* Elimina margen lateral */
+    }
+
+    .contact-info {
+        text-align: center;
+        padding: 0.8rem;
+        margin-top: 0.5rem; /* Reduce el espacio superior */
+    }
+
+    .section {
+        margin: 0.8rem auto;
+        max-width: calc(100% - 1.6rem); /* Mantiene espacio lateral de 0.8rem a cada lado */
+        padding: 0.8rem;
+    }
+
+    .foto-perfil {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logos-contenedor {
+        padding-bottom: 10px;
+    }
+
+    .logos {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.8rem;
+    }
+
+    .header-container {
+        gap: 0.3rem; /* Espacio mínimo entre elementos */
+    }
+
+    .section {
+        max-width: calc(100% - 1.2rem); /* Mantiene espacio lateral de 0.6rem a cada lado */
+        padding: 0.6rem;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .foto-perfil {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .logos img {
+        height: 35px;
+    }
+
+    footer {
+        padding: 0.8rem;
+    }
+
+    .profile-info {
+        padding: 0.6rem;
+    }
+
+    .contact-info {
+        padding: 0.6rem;
+        margin-top: 0.3rem; /* Reduce aún más el espacio */
+    }
+}
